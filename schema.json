@@ -1,0 +1,63 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"additionalProperties": false,
+	"properties": {
+		"$schema": {
+			"type": "string",
+			"description": "link to the version of the schema that cna validate the resume",
+			"format": "uri"
+		},
+		"restaurant_name": {
+			"type": "string",
+			"description": "The name of the restaurant. e.g. McDonalds"
+		},
+		"website": {
+			"type": "string",
+			"description": "Link to the restaurants main website",
+			"format": "uri"
+		},
+		"location": {
+			"type": "string",
+			"description": "City where menu was found. Include country and state"
+		},
+		"sections": {
+			"type": "array",
+			"description": "Array containing menu sections",
+			"items": {
+				"type": "object",
+				"additionalProperties": true,
+				"properties": {
+					"title": {
+						"type": "string",
+						"description": "e.g. Sandwiches"
+					},
+					"items": {
+						"type": "object",
+						"description": "Menu items available for order",
+						"additionalProperties": true,
+						"properties": {
+							"name": {
+								"type": "string",
+								"description": "Item name. e.g. Chicken Sandwich"
+							},
+							"description": {
+								"type": "string",
+								"description": "Description of what the item is"
+							},
+							"price": {
+								"type": "string",
+								"description": "Price of item, use local currency"
+							},
+							"image_url": {
+								"type": "string",
+								"description": "Link to image of item",
+								"format": "uri"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
